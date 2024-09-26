@@ -1,0 +1,15 @@
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+    gap: 15px; /* Отступы между изображениями */
+    padding: 20px;
+  }
+  
+  .image-gallery img {
+    width: 100%; /* Изображение занимает всю ширину своей колонки */
+    aspect-ratio: 1 / 1; /* Устанавливаем соотношение сторон 1:1 для квадратной формы */
+    object-fit: cover; /* Обрезка для заполнения квадрата, сохраняя пропорции */
+    border-radius: 8px; /* Закругленные углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для изображений */
+  }
+  

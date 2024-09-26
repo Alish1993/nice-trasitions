@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: url('../assets/landscape-minimal-panaromic-8k-97-1680x1050.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+a{
+    text-decoration: none;
+}
