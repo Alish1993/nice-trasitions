@@ -1,7 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
-const { upload, uploadDirectory, uploadFiles } = require('./middelewares/multer');
-const postRouter = require('./router/postRouter');
+const { uploadDirectory, router } = require('./router/postRouter'); // Импортируйте router из postRouter
 
 const app = express();
 
@@ -13,9 +12,13 @@ app.use(morgan('dev'));
 // Подключаем папку 'uploads' для доступа к статическим файлам
 app.use('/uploads', uploadDirectory);
 
-// Маршрут для загрузки файлов
-app.post('/upload', upload.array('photos', 10), uploadFiles);
+// Подключаем маршруты
+app.use('/api/post', router);
 
-// Марширут для получения списка файлов
-app.use('/api/post', postRouter);
+// Обработчик ошибок
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Что-то пошло не так!');
+});
+
 module.exports = app;
